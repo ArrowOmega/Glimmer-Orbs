@@ -34,12 +34,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3110907526149169232}
-  m_LocalRotation: {x: -0, y: -0, z: 0.0031018537, w: 0.99999523}
+  m_LocalRotation: {x: 0, y: 0, z: 0.0030979172, w: 0.99999523}
   m_LocalPosition: {x: -7.92, y: -5.29, z: 0}
   m_LocalScale: {x: 0.36571905, y: 0.36571905, z: 0.36571905}
   m_Children:
   - {fileID: 3110907527304383964}
   - {fileID: 3110907526716905221}
+  - {fileID: 8728014040319577269}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.35500002}
@@ -103,8 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540d09a4412c54f9cac3b6cc57f58ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
-  jumpheight: 2
+  speed: 3
+  jumpheight: 5
+  groundCheck: {fileID: 8728014040319577269}
+  groundCheckRadius: 0.1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!50 &3110907526149169228
 Rigidbody2D:
   serializedVersion: 4
@@ -116,14 +122,14 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.1
+  m_UseAutoMass: 1
+  m_Mass: 2.6010785
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!82 &3110907526149169230
@@ -5370,3 +5376,33 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3110907527304383776}
   m_Enabled: 1
+--- !u!1 &7783710714480992775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8728014040319577269}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8728014040319577269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7783710714480992775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: -2.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3110907526149169234}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

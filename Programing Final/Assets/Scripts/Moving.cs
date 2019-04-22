@@ -6,6 +6,10 @@ public class Moving : MonoBehaviour
 
     public float speed;
     public float jumpheight;
+    public Transform groundCheck;
+    public float groundCheckRadius;
+    public LayerMask whatIsGround;
+    private bool grounded;
 
     // Use this for initialization
     void Start()
@@ -13,31 +17,27 @@ public class Moving : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w"))
+        if (Input.GetKeyDown("w") && grounded)
         {
-            transform.Translate(Vector3.up * jumpheight);
-            if (Input.GetKey("a"))
-            {
-                transform.Translate(Vector3.left * speed);
-                GetComponent<SpriteRenderer>().flipX = true; //Face Character Left
-            }
-            else if (Input.GetKey("d"))
-            {
-                transform.Translate(Vector3.right * speed);
-                GetComponent<SpriteRenderer>().flipX = false; //Face Character Right
-            }
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpheight);
+            
         }
-        else if (Input.GetKey("a"))
+        if (Input.GetKey("a"))
         {
-            transform.Translate(Vector3.left * speed);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
             GetComponent<SpriteRenderer>().flipX = true; //Face Character Left
         }
-        else if (Input.GetKey("d"))
+        if (Input.GetKey("d"))
         {
-            transform.Translate(Vector3.right * speed);
+            GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
             GetComponent<SpriteRenderer>().flipX = false; //Face Character Right
         }
     }
