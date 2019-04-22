@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f4e9ee18683af44a3ba6edf9cc033f1d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - OrbParticles: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - OrbsGrab: {instanceID: 0}
+  - OrbsText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
