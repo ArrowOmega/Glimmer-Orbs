@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
+    public string startLevel;
 
-
-    // Update is called once per frame
-    void Update()
+    public void NewGame()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            SceneManager.LoadScene("Instructions");
-        }
+        SceneManager.LoadScene(startLevel);
+
+        PlayerPrefs.SetInt("CurrentPlayerScore", 0);
+
     }
 }
