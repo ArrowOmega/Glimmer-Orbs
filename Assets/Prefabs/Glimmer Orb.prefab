@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2432224475498492873}
   - component: {fileID: 2432224475498492872}
   - component: {fileID: 2432224475498492875}
+  - component: {fileID: 5274077497962247851}
   m_Layer: 0
   m_Name: Glimmer Orb
   m_TagString: Collectable
@@ -96,3 +97,18 @@ CircleCollider2D:
   m_Offset: {x: -0.008940101, y: 0}
   serializedVersion: 2
   m_Radius: 0.31059796
+--- !u!114 &5274077497962247851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2432224475498492874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261c92aa6cbc4d546aea00f864c8e2de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToAdd: 1
+  glimmerOrbs: {fileID: 0}
+  glimmerParticle: {fileID: 0}

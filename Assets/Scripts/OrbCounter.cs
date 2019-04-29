@@ -12,7 +12,6 @@ public class OrbCounter : MonoBehaviour
     private void Start()
     {
         text = GetComponent<Text>();
-        //score = 0;
         score = PlayerPrefs.GetInt("CurrentPlayerScore");
     }
 
