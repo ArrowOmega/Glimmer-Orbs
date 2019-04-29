@@ -28,12 +28,18 @@ public class Moving : MonoBehaviour
         if (Input.GetKey("a"))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
+            GetComponent<Animator>().SetInteger("AnimState", 1);
             GetComponent<SpriteRenderer>().flipX = true; //Face Character Left
         }
         if (Input.GetKey("d"))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
+            GetComponent<Animator>().SetInteger("AnimState", 1);
             GetComponent<SpriteRenderer>().flipX = false; //Face Character Right
+        }
+        else
+        {
+            GetComponent<Animator>().SetInteger("AnimState", 0);
         }
     }
 }
