@@ -9,6 +9,7 @@ public class Title : MonoBehaviour
     public string start;
     public string title;
     public string instructions;
+    public string winRestart;
 
     public void NewGame()
     {
@@ -28,3 +29,4 @@ public class Title : MonoBehaviour
         SceneManager.LoadScene(title);
     }
 }
+

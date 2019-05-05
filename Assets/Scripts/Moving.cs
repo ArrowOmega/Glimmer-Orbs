@@ -1,16 +1,26 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Moving : MonoBehaviour
 {
     public float speed;
-    public float jumpheight;
+    public float jumpHeight;
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
     private bool grounded;
+    private bool doubleJumped;
+    string sceneName;
+
 
     // Use this for initialization
+
+    void Start()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+    }
 
     private void FixedUpdate()
     {
@@ -20,10 +30,20 @@ public class Moving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (grounded)
+        {
+            doubleJumped = false;
+        }
+
         if (Input.GetKeyDown("w") && grounded)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpheight);
+            Jump();
 
+        }
+        if ((sceneName == "Level2") && Input.GetKeyDown("w") && !doubleJumped && !grounded)
+        {
+            Jump();
+            doubleJumped = true;
         }
         if (Input.GetKey("a"))
         {
@@ -41,5 +61,11 @@ public class Moving : MonoBehaviour
         {
             GetComponent<Animator>().SetInteger("AnimState", 0);
         }
+    }
+
+    public void Jump()
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+
     }
 }

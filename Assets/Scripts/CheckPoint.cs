@@ -9,6 +9,7 @@ public class CheckPoint : MonoBehaviour
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+
     }
 
     // Update is called once per frame
