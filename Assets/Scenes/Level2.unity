@@ -853,7 +853,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234068156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -115.22517, y: 1.8743362, z: 0.1875}
+  m_LocalPosition: {x: -107.37, y: 1.8743362, z: 0.1875}
   m_LocalScale: {x: 0.24768, y: 0.24768, z: 0.24768}
   m_Children: []
   m_Father: {fileID: 966148358}
@@ -1826,7 +1826,8 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 3.8051176
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 510930386801088054, guid: 0a8acb945fb014200ae6d37b96fc6ba2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a8acb945fb014200ae6d37b96fc6ba2, type: 3}
 --- !u!1001 &658006266
 PrefabInstance:
@@ -8629,7 +8630,8 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: -2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 510930386801088054, guid: 0a8acb945fb014200ae6d37b96fc6ba2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a8acb945fb014200ae6d37b96fc6ba2, type: 3}
 --- !u!4 &1165654181 stripped
 Transform:
@@ -9093,7 +9095,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 510930386801088050, guid: 0a8acb945fb014200ae6d37b96fc6ba2,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 2.2261214
+      objectReference: {fileID: 0}
+    - target: {fileID: 510930386801088050, guid: 0a8acb945fb014200ae6d37b96fc6ba2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 16.104904
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 510930386801088054, guid: 0a8acb945fb014200ae6d37b96fc6ba2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0a8acb945fb014200ae6d37b96fc6ba2, type: 3}
 --- !u!1001 &1372063582
 PrefabInstance:
@@ -9538,8 +9551,8 @@ Transform:
   - {fileID: 1719843788}
   - {fileID: 43918801}
   - {fileID: 1910859308}
-  - {fileID: 1517751934}
   - {fileID: 214803204}
+  - {fileID: 1517751934}
   - {fileID: 206350977}
   - {fileID: 877697530}
   - {fileID: 1620254774}
