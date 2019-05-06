@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Moving : MonoBehaviour
 {
+    float horizontalMove = 0f;
     public float speed;
     public float jumpHeight;
     public Transform groundCheck;
@@ -13,6 +14,8 @@ public class Moving : MonoBehaviour
     private bool doubleJumped;
     string sceneName;
 
+    public AudioSource jumpSource;
+    public AudioClip jumpSound;
 
     // Use this for initialization
 
@@ -45,27 +48,27 @@ public class Moving : MonoBehaviour
             Jump();
             doubleJumped = true;
         }
+        
         if (Input.GetKey("a"))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
-            GetComponent<Animator>().SetInteger("AnimState", 1);
+            GetComponent<Animator>().SetFloat("Speed", 1);
             GetComponent<SpriteRenderer>().flipX = true; //Face Character Left
         }
         if (Input.GetKey("d"))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
-            GetComponent<Animator>().SetInteger("AnimState", 1);
+            GetComponent<Animator>().SetFloat("Speed", 1);
             GetComponent<SpriteRenderer>().flipX = false; //Face Character Right
         }
         else
         {
-            GetComponent<Animator>().SetInteger("AnimState", 0);
+            GetComponent<Animator>().SetFloat("Speed", 0);
         }
     }
 
     public void Jump()
     {
         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-
     }
 }
